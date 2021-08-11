@@ -46,16 +46,31 @@ public class BookService {
     	return bookRepository.save(b);
     }
     
-    public Book updateBook(Long id, String title, String desc, String lang, Integer numOfPages) {
+    public Optional<Book> updateBook(Long id, String title, String desc, String lang, Integer numOfPages) {
     	Optional <Book> temp = bookRepository.findById(id);
+    	/*
     	if(temp != null) {
     		temp.get().setTitle(title);
     		temp.get().setDescription(desc);
     		temp.get().setLanguage(lang);
     		temp.get().setNumberOfPages(numOfPages);
 
-    		return temp.get();
+    		return bookRepository.save(temp);
+    		*/
+    		if (bookRepository.findById(id).isPresent()) {
+    			Book existingBook = bookRepository.findById(id).get();
+    			
+        		existingBook.setTitle(title);
+        		existingBook.setDescription(desc);
+        		existingBook.setLanguage(lang);
+        		existingBook.setNumberOfPages(numOfPages);
+        		
+        		Book updatedBook = bookRepository.save(existingBook);
+        		
+        		return bookRepository.findById(updatedBook.getId());
+    		
     	}
     	return null;        
-    }
+    }    
+    
 }
