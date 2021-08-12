@@ -76,7 +76,7 @@ public class SongsController {
     }
     
    
-    @RequestMapping(value="/songs/{id}/edit", method=RequestMethod.POST)
+    @RequestMapping(value="/songs/{id}/edit", method=RequestMethod.PUT)
     public String update(@Valid @ModelAttribute("song") Song song, BindingResult result) {
         if (result.hasErrors()) {
             return "/songs/edit.jsp";
@@ -85,7 +85,8 @@ public class SongsController {
             return "redirect:/songs";
         }
     }
-    
+   
+
     
     @RequestMapping(value="/songs/{id}", method=RequestMethod.DELETE)
     public String destroy(@PathVariable("id") Long id) {
