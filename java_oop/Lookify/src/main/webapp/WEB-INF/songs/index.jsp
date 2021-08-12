@@ -79,7 +79,7 @@
 											value="${song.title}" /></a></td>
 								<td><c:out value="${song.artist}" /></td>
 								<td><c:out value="${song.rating}" /></td>
-								<td><a href="/songs/${song.id}/edit">Edit</a> | <a
+								<td><a href="/songs/edit/${song.id}">Edit</a> | <a
 									href="/songs/delete/${song.id}">Delete</a></td>
 
 							</tr>
