@@ -6,13 +6,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- CSS only -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-	<meta charset="ISO-8859-1">
+<!-- for Bootstrap CSS -->
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<!-- YOUR own local CSS -->
+<link rel="stylesheet" href="/css/main.css" />
+<!-- For any Bootstrap that uses JS or jQuery-->
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/5.0/examples/pricing/">
 	<title>Add Ninja</title>
-	<a href="/">Home</a>
 </head>
 <body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+			<ul class="nav">
+				<li class="nav-item"><a class="nav-link active" href="/">Home</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/dojos/new">Add
+						New Dojo</a></li>
+				<li class="nav-item"><a class="nav-link" href="/ninjas/new">Add
+						New Ninja</a></li>
+			</ul>
+		</div>
 	<div class="container">
 		<h1>Who's is joining the Dojo?</h1>
 		<form:form action="/ninjas/new" method="post" modelAttribute="ninjasObj">

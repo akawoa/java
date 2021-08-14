@@ -75,5 +75,20 @@ public class MainController {
 		model.addAttribute("dojos", allDojos);
 		return "dojoDash.jsp";
 	}
+	@GetMapping("/dojo/{id}/delete")
+	public String deleteDojo(
+			@PathVariable("id") Long dojo_id
+			) {
+		mainService.deleteDojo(dojo_id);
+		return "redirect:/";
+	}
+	@GetMapping("/ninja/{id}/delete")
+	public String deleteNinja(
+			@PathVariable("id") Long ninja_id
+			) {
+		mainService.deleteNinja(ninja_id);
+		return "redirect:/";
+	}
+	
 	
 }

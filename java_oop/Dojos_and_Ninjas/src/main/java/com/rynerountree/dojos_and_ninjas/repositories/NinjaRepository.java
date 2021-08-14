@@ -10,4 +10,5 @@ import com.rynerountree.dojos_and_ninjas.models.Ninja;
 @Repository
 public interface NinjaRepository extends CrudRepository<Ninja, Long> {
 	List<Ninja> findAll();
+	void deleteById(Long id);
 }

@@ -3,6 +3,7 @@ package com.rynerountree.dojos_and_ninjas.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,7 +26,7 @@ public class Dojo {
 	
 	private String name;
 	
-	@OneToMany(mappedBy = "dojo", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "dojo", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Ninja> ninjas;
 	
 	// CONSTRUCTOR
